@@ -179,7 +179,7 @@
         quiet = FALSE, mode = "wb")
     fileList <- untar(tcgafile, list = TRUE)
     fullList <- paste(destdir, fileList, sep = "/")
-    if (any(nchar(fullList) > 259) && identical(.Platform$OS.type, "windows"))
+    if (any(nchar(fullList) > 400) && identical(.Platform$OS.type, "windows"))
         warning("File path too long, make 'destdir' shorter")
     if (!subSearch) {
       fileList = fileList[grepl(searchName,fileList)]
